@@ -4,3 +4,7 @@ margin: 0px;
 font-family: 'PT Sans Narrow', sans-serif;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
