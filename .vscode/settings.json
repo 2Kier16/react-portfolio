@@ -5,6 +5,23 @@
     "spellright.documentTypes": [
         "markdown",
         "latex",
-        "plaintext"
-    ]
+        "plaintext",
+        "javascript"
+    ],
+    "cSpell.caseSensitive": true,
+    "cSpell.dictionaries": [
+        "axios",
+        "dom"
+    ],
+    "cSpell.words": [
+        "dynaic"
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:kier-turpin-react-portfolio}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
 }

@@ -6,8 +6,9 @@ import PortfolioItem from "./portfolio-item";
 export default class PortfolioContainer extends Component {
   constructor() {
     super();
+
     this.state = {
-      pageTitle: "Welcom to my portfolio",
+      pageTitle: "Welcome to my portfolio",
       isLoading: false,
       data: [],
     };
@@ -27,13 +28,11 @@ export default class PortfolioContainer extends Component {
     axios
       .get("https://kierturpin.devcamp.space/portfolio/portfolio_items")
       .then((response) => {
-        // handle success
         this.setState({
           data: response.data.portfolio_items,
         });
       })
       .catch((error) => {
-        // handle error
         console.log(error);
       });
   }

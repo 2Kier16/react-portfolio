@@ -6,15 +6,16 @@ export default class PortfolioItem extends Component {
     super(props);
 
     this.state = {
-      portfolioItemsClass: "",
+      portfolioItemClass: "",
     };
   }
+
   handleMouseEnter() {
-    this.setState({ portfolioItemsClass: "image-blur" });
+    this.setState({ portfolioItemClass: "image-blur" });
   }
 
   handleMouseLeave() {
-    this.setState({ portfolioItemsClass: "" });
+    this.setState({ portfolioItemClass: "" });
   }
   // Data that we'll need: thumb_image_url
   // - background image
@@ -31,7 +32,7 @@ export default class PortfolioItem extends Component {
       >
         <div
           className={
-            "portfolio-img-background " + this.state.portfolioItemsClass
+            "portfolio-img-background " + this.state.portfolioItemClass
           }
           style={{
             backgroundImage: "url(" + thumb_image_url + ")",

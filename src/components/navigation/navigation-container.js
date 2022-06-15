@@ -7,8 +7,8 @@ const NavigationComponent = (props) => {
   const dynaicLink = (route, linkText) => {
     return (
       <div className="nav-link-wrapper">
-        <NavLink to="/blog" activeClassName="nav-link-active">
-          Blog
+        <NavLink to={route} activeClassName="nav-link-active">
+          {linkText}
         </NavLink>
       </div>
     );
@@ -48,8 +48,14 @@ const NavigationComponent = (props) => {
           </NavLink>
         </div>
 
+        <div className="nav-link-wrapper">
+          <NavLink to="/blog" activeClassName="nav-link-active">
+            Blog
+          </NavLink>
+        </div>
+
         {props.loggedInStatus === "LOGGED_IN"
-          ? dynaicLink("/blog", "Blog")
+          ? dynaicLink("/portfolio-manager", "PortfolioManger")
           : null}
       </div>
 

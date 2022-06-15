@@ -8,7 +8,7 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errortext: "",
+      errorText: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
