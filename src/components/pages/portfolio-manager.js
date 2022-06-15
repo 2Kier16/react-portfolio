@@ -19,9 +19,9 @@ export default class PortfolioManger extends Component {
   }
 
   handleSuccessfulFormSubmission() {
-    //TOD
-    // update the portfolioItem state
-    // and the portfolioItems to the list
+    this.setState({
+      portfolioItems: [portfolioItem].concat(this.state.portfolioItems),
+    });
   }
 
   handleSuccessfulFormSubmissionError(error) {
@@ -30,9 +30,12 @@ export default class PortfolioManger extends Component {
 
   getPortfolioItems() {
     axios
-      .get("https://kierturpin.devcamp.space/portfolio/portfolio_items", {
-        withCredentials: true,
-      })
+      .get(
+        "https://kierturpin.devcamp.space/portfolio/portfolio_items?order_by=created_at&direction=desc",
+        {
+          withCredentials: true,
+        }
+      )
       .then((response) => {
         this.setState({
           portfolioItems: [...response.data.portfolio_items],
