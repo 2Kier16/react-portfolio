@@ -4,7 +4,6 @@ import DropzoneComponent from "react-dropzone-component";
 
 import "../../../node_modules/dropzone/dist/min/dropzone.min.css";
 import "../../../node_modules/react-dropzone-component/styles/filepicker.css";
-import { Route } from "react-router";
 
 export default class PortfolioForm extends Component {
   constructor(props) {
@@ -32,6 +31,7 @@ export default class PortfolioForm extends Component {
     this.handleBannerDrop = this.handleBannerDrop.bind(this);
     this.handleLogoDrop = this.handleLogoDrop.bind(this);
     this.deleteImage = this.deleteImage.bind(this);
+
     this.thumbRef = React.createRef();
     this.bannerRef = React.createRef();
     this.logoRef = React.createRef();
@@ -149,7 +149,7 @@ export default class PortfolioForm extends Component {
   handleSubmit(event) {
     axios({
       method: this.state.apiAction,
-      url: this.stat.apiUrl,
+      url: this.state.apiUrl,
       data: this.buildForm(),
       withCredentials: true,
     })

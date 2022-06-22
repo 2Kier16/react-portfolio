@@ -96,7 +96,7 @@ export default class PortfolioManger extends Component {
             handleNewFormSubmission={this.handleNewFormSubmission}
             handleEditFormSubmission={this.handleEditFormSubmission}
             handleFormSubmissionError={this.handleFormSubmissionError}
-            clearPortfolioToEdit={this.clearPortfolioToEdit}
+            clearPortfolioToEdit={this.handleClearPortfolioToEdit}
             portfolioToEdit={this.state.portfolioToEdit}
           />
         </div>
