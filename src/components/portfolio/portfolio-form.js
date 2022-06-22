@@ -40,7 +40,7 @@ export default class PortfolioForm extends Component {
   deleteImage(imageType) {
     axios
       .delete(
-        `https://api..devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imageType}`,
+        `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imageType}`,
         { withCredentials: true }
       )
       .then((response) => {
@@ -76,11 +76,11 @@ export default class PortfolioForm extends Component {
         position: position || "",
         url: url || "",
         editMode: true,
-        apiUrl: `https://kierturpin.devcamp.space/portfolio/portfolio_itmes/${id}`,
+        apiUrl: `https://kierturpin.devcamp.space/portfolio/portfolio_items/${id}`,
         apiAction: "patch",
         thumb_image_url: thumb_image_url || "",
         banner_image_url: banner_image_url || "",
-        logo: logo_url || "",
+        logo_url: logo_url || "",
       });
     }
   }
@@ -107,7 +107,7 @@ export default class PortfolioForm extends Component {
     return {
       iconFiletypes: [".jpg", ".png"],
       showFiletypeIcon: true,
-      postUrl: "http://httpbin.org/post",
+      postUrl: "https://httpbin.org/post",
     };
   }
   djsConfig() {
@@ -155,7 +155,7 @@ export default class PortfolioForm extends Component {
     })
       .then((response) => {
         if (this.state.editMode) {
-          this.props.handleNewFormSubmission();
+          this.props.handleNewEditSubmission();
         } else {
           this.props.handleNewFormSubmission(response.data.portfolio_item);
         }
@@ -182,7 +182,7 @@ export default class PortfolioForm extends Component {
         console.log("portfolio form handleSubmit error", error);
       });
 
-    this.buildForm();
+    // this.buildForm();
     event.preventDefault();
   }
 
