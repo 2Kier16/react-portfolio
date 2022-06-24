@@ -15,14 +15,12 @@ export default class PortfolioManger extends Component {
 
     this.handleNewFormSubmission = this.handleNewFormSubmission.bind(this);
     this.handleEditFormSubmission = this.handleEditFormSubmission.bind(this);
-    this.handleSuccessfulFormSubmissionError =
-      this.handleSuccessfulFormSubmissionError.bind(this);
+    this.handleFormSubmissionError = this.handleFormSubmissionError.bind(this);
     this.handleDeleteClick = this.handleDeleteClick.bind(this);
     this.handleEditClick = this.handleEditClick.bind(this);
-    this.handleClearPortfolioToEdit =
-      this.handleClearPortfolioToEdit.bind(this);
+    this.clearPortfolioToEdit = this.clearPortfolioToEdit.bind(this);
   }
-  handleClearPortfolioToEdit() {
+  clearPortfolioToEdit() {
     this.setState({
       portfolioToEdit: {},
     });
@@ -61,8 +59,8 @@ export default class PortfolioManger extends Component {
     });
   }
 
-  handleSuccessfulFormSubmissionError(error) {
-    console.log("handleSuccessfulFormSubmissionError", error);
+  handleFormSubmissionError(error) {
+    console.log("handleFormSubmissionError", error);
   }
 
   getPortfolioItems() {
@@ -80,7 +78,7 @@ export default class PortfolioManger extends Component {
         console.log(this.state.portfolioItems);
       })
       .catch((error) => {
-        console.log("error in get PortfolioItems", error);
+        console.log("error in getPortfolioItems", error);
       });
   }
 
@@ -96,7 +94,7 @@ export default class PortfolioManger extends Component {
             handleNewFormSubmission={this.handleNewFormSubmission}
             handleEditFormSubmission={this.handleEditFormSubmission}
             handleFormSubmissionError={this.handleFormSubmissionError}
-            clearPortfolioToEdit={this.handleClearPortfolioToEdit}
+            clearPortfolioToEdit={this.clearPortfolioToEdit}
             portfolioToEdit={this.state.portfolioToEdit}
           />
         </div>

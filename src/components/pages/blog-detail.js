@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import BlogItem from "../blog/blog-item";
 
 export default class BlogDetail extends Component {
   constructor(props) {

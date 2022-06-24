@@ -2,4 +2,5 @@
 addedfile
 errortext
 filepicker
+fontawesome
 uploaders
