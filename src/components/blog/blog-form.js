@@ -31,8 +31,16 @@ export default class BlogForm extends Component {
         { withCredentials: true }
       )
       .then((response) => {
-        this.props.handleSuccessfullFormSubmission(response.data);
+        this.props.handleSuccessfullFormSubmission(
+          response.data.portfolio_blog
+        );
+
+        this.setState({
+          title: "",
+          blog_status: "",
+        });
       })
+
       .catch((error) => {
         console.log("handleSubmit for blog error", error);
       });
@@ -48,24 +56,26 @@ export default class BlogForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          name="title"
-          placeholder="Blog Title"
-          value={this.state.title}
-        />
+      <form onSubmit={this.handleSubmit} className="blog-form-wrapper">
+        <div className="two-column">
+          <input
+            type="text"
+            onChange={this.handleChange}
+            name="title"
+            placeholder="Blog Title"
+            value={this.state.title}
+            className="blog-form-wrapper"
+          />
 
-        <input
-          type="text"
-          onChange={this.handleChange}
-          name="blog_status"
-          placeholder="Blog status"
-          value={this.state.blog_status}
-        />
-
-        <button>Save</button>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            name="blog_status"
+            placeholder="Blog status"
+            value={this.state.blog_status}
+          />
+        </div>
+        <button className="btn">Save</button>
       </form>
     );
   }
