@@ -1,5 +1,6 @@
 # Custom Dictionary Words
 addedfile
+draftjs
 errortext
 filepicker
 fontawesome
