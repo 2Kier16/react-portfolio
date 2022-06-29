@@ -1,8 +1,10 @@
 {
-    "recommendations": [
-        "belkacemberras.spellcheck",
-        "juliabay.spellcheck",
-        "streetsidesoftware.code-spell-checker",
-        "formulahendry.code-runner"
-    ]
+  "recommendations": [
+    "belkacemberras.spellcheck",
+    "juliabay.spellcheck",
+    "streetsidesoftware.code-spell-checker",
+    "formulahendry.code-runner",
+    "lukazakrajsek.scss-refactoring",
+    "p42ai.refactor"
+  ]
 }
