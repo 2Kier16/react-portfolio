@@ -19,8 +19,10 @@ export default class PortfolioContainer extends Component {
   handleFilter(filter) {
     if (filter === "CLEAR_FILTERS") {
       this.getPortfolioItems();
+      console.log("cleared");
     } else {
       this.getPortfolioItems(filter);
+      console.log("filerted by", filter);
     }
   }
 
@@ -30,7 +32,7 @@ export default class PortfolioContainer extends Component {
       .then((response) => {
         if (filter) {
           this.setState({
-            data: response.date.portfolio_items.filter((item) => {
+            data: response.data.portfolio_items.filter((item) => {
               return item.category === filter;
             }),
           });
